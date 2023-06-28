@@ -1,45 +1,41 @@
-# Import
+# İçe aktarma
 from flask import Flask, render_template, request, send_from_directory
 
 
 app = Flask(__name__)
 
-# Form results
-@app.route('/', methods=['GET','POST'])
+
+# Form sonuçları
+@app.route("/", methods=["GET", "POST"])
 def index():
-    if request.method == 'POST':
-        # getting the selected image
-        selected_image = request.form.get('image-selector')
+    if request.method == "POST":
+        # seçilen resmi al
+        selected_image = request.form.get("image-selector")
 
-        # Assignment #2.Receiving the text
-        
+        # Görev #2. Metne ulaş
 
-        # Assignment #3. Receiving the text's positioning
-       
+        # Görev #3. Metnin pozisyonuna ulaş
 
-        # Assignment #3. Receiving the text's colour
-        
+        # Görev #3. Metnin rengine ulaş
 
-        return render_template('index.html', 
-                               # Displaying the selected  image
-                               selected_image=selected_image, 
+        return render_template(
+            "index.html",
+            # Seçilen resmi göster
+            selected_image = selected_image,
+            # Görev #2. Metni göster
 
-                               # Assignment #2. Displaying the text
-                               
-
-                               # Assignment #3. Displaying the colour 
-                               
-                               
-                               # Assignment #3. Displaying the text's positioning
-
-                               )
+            # Görev #3. Rengi göster
+            
+            # Görev #3. Metnin posizyonunu göster
+        )
     else:
-        # Displaying the first image by default
-        return render_template('index.html', selected_image='logo.svg')
+        # İlk resmi varsayılan olarak ayarlamak
+        return render_template("index.html", selected_image="logo.svg")
 
 
-@app.route('/static/img/<path:path>')
+@app.route("/static/img/<path:path>")
 def serve_images(path):
-    return send_from_directory('static/img', path)
+    return send_from_directory("static/img", path)
+
 
 app.run(debug=True)
