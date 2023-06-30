@@ -1,14 +1,14 @@
-# Import
+# İçe Aktarma
 from flask import Flask, render_template, request, send_from_directory
 
 
 app = Flask(__name__)
 
-# Form results
+# Formun sonuçları
 @app.route('/', methods=['GET','POST'])
 def index():
     if request.method == 'POST':
-        # getting the selected image
+        # seçilen görüntüyü almak
         selected_image = request.form.get('image-selector')
 
         # Assignment #2.Receiving the text
