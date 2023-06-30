@@ -11,30 +11,30 @@ def index():
         # seçilen görüntüyü almak
         selected_image = request.form.get('image-selector')
 
-        # Assignment #2.Receiving the text
+        # Ödev 2. Metni almak
         
 
-        # Assignment #3. Receiving the text's positioning
+        # Ödev #3. Metnin konumunu alma
        
 
-        # Assignment #3. Receiving the text's colour
+        # Ödev #3. Metnin rengini alma
         
 
         return render_template('index.html', 
-                               # Displaying the selected  image
+                               # Seçilen resmin görüntülenmesi
                                selected_image=selected_image, 
 
-                               # Assignment #2. Displaying the text
+                               # Ödev #2. metni görüntüleme
                                
 
-                               # Assignment #3. Displaying the colour 
+                               # Ödev #3. rengin gösterilmesi
                                
                                
-                               # Assignment #3. Displaying the text's positioning
+                               # Ödev #3. Metnin konumunu görüntüleme
 
                                )
     else:
-        # Displaying the first image by default
+        # Varsayılan olarak ilk resmin görüntülenmesi
         return render_template('index.html', selected_image='logo.svg')
 
 
