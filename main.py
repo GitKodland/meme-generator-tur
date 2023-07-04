@@ -1,40 +1,40 @@
-# İçe Aktarma
+# İçeri Aktar
 from flask import Flask, render_template, request, send_from_directory
 
 
 app = Flask(__name__)
 
-# Formun sonuçları
+# Form sonuçları 
 @app.route('/', methods=['GET','POST'])
 def index():
     if request.method == 'POST':
-        # seçilen görüntüyü almak
+        # seçilen resmi almak
         selected_image = request.form.get('image-selector')
 
-        # Ödev 2. Metni almak
+        # Görev #2. Metni almak
         
 
-        # Ödev #3. Metnin konumunu alma
+        # Görev #3. Metnin konumunu almak
        
 
-        # Ödev #3. Metnin rengini alma
+        # Görev #3. Metnin rengini almak
         
 
         return render_template('index.html', 
-                               # Seçilen resmin görüntülenmesi
+                               # Seçilen resmi görüntüleme
                                selected_image=selected_image, 
 
-                               # Ödev #2. metni görüntüleme
+                               # Görev #2. Metni görüntüleme
                                
 
-                               # Ödev #3. rengin gösterilmesi
+                               # Görev #3. Rengi görüntüleme
                                
                                
-                               # Ödev #3. Metnin konumunu görüntüleme
+                               # Görev #3. Metnin konumunu görüntüleme
 
                                )
     else:
-        # Varsayılan olarak ilk resmin görüntülenmesi
+        # Varsayılan olarak ilk resmi görüntüleme
         return render_template('index.html', selected_image='logo.svg')
 
 
